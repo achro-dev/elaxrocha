@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
   let annivAlex = new Date( yearOfTheEvent, 05, 24 )
   const isItJune24th = currentTime.getMonth() === 05 && currentTime.getDate() === 24
   
-  let annivAurelien = new Date( yearOfTheEvent, 03, 04 )
-  const isItApril04th = currentTime.getMonth() === 03 && currentTime.getDate() === 04
+  let annivAurelien = new Date( yearOfTheEvent, 05, 23 )
+  const isItJune23th = currentTime.getMonth() === 05 && currentTime.getDate() === 23
 
   function countdown() {
     const now = new Date()
@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     if (now > annivAurelien) {
-      annivAurelien = new Date( yearOfTheEvent + 1, 03, 03 )
+      annivAurelien = new Date( yearOfTheEvent + 1, 05, 23 )
     } else if ( now.getFullYear() === annivAurelien.getFullYear() + 1 ) {
-      annivAurelien = new Date( now.getFullYear(), 03, 04 )
+      annivAurelien = new Date( now.getFullYear(), 05, 23 )
     }
     
     const currentTime = now.getTime()
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
       countdownContainer.style.display = "none"
       birthdayTime.style.display = "block"
 
-    } else if ( isItApril04th ) {
+    } else if ( isItJune23th  ) {
 
       console.log('Happy birthday, Aurelien!')
 
