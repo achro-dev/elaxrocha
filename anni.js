@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
       secondsCountdown.textContent = seconds
 
       setTimeout(countdown, 1000)
+    }
 
   } // end of countdown
   countdown()
