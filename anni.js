@@ -10,7 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const currentTime = new Date()
   let yearOfTheEvent = currentTime.getFullYear()
   let annivAlex = new Date( yearOfTheEvent, 04, 08 )
-  const isItApril4th = currentTime.getMonth() === 08 && currentTime.getDate() === 04
+  const isItAugust4th = currentTime.getMonth() === 08 && currentTime.getDate() === 04
+  
+  let annivAurelien = new Date( yearOfTheEvent, 04, 05 )
+  const isItMay4th = currentTime.getMonth() === 05 && currentTime.getDate() === 04
 
   function countdown() {
     const now = new Date()
@@ -21,8 +24,15 @@ document.addEventListener('DOMContentLoaded', function() {
       annivAlex = new Date( now.getFullYear(), 04, 08 )
     }
     
+    if (now > annivAurelien) {
+      annivAurelien = new Date( yearOfTheEvent + 1, 04, 08 )
+    } else if ( now.getFullYear() === annivAurelien.getFullYear() + 1 ) {
+      annivAurelien = new Date( now.getFullYear(), 04, 08 )
+    }
+    
     const currentTime = now.getTime()
     const annivAlex = annivAlex.getTime()
+    const annivAurelien = annivAurelien.getTime()
     const remainingTime = eventTime - currentTime
 
     let seconds = Math.floor( remainingTime / 1000 )
@@ -34,8 +44,15 @@ document.addEventListener('DOMContentLoaded', function() {
     minutes %= 60
     seconds %= 60
 
-    if ( isItApril4th ) {
+    if ( isItAugust4th ) {
       console.log('Happy birthday, Alex!')
+
+      countdownContainer.style.display = "none"
+      birthdayTime.style.display = "block"
+
+    } else if ( isItMay4th ) {
+
+      console.log('Happy birthday, Aurelien!')
 
       countdownContainer.style.display = "none"
       birthdayTime.style.display = "block"
@@ -48,8 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
       secondsCountdown.textContent = seconds
 
       setTimeout(countdown, 1000)
-
-    } 
 
   } // end of countdown
   countdown()
