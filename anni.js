@@ -36,11 +36,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var eventTime;
     
      if (annivAurelien > annivAlex){
-      eventTime = annivAurelien.getTime() 
-       txtCont.innerHTML = "Anniversaire d'Aurelien";
-    } else {
-      eventTime = annivAlex.getTime()
+      eventTime = annivAlexandre.getTime() 
       txtCont.innerHTML = "Anniversaire d'Alexandre";
+    } else {
+      eventTime = annivAurelien.getTime() 
+      txtCont.innerHTML = "Anniversaire d'Aurelien";
     }
     
     const remainingTime = eventTime - currentTime
