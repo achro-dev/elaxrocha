@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const hoursCountdown = document.querySelector('#hours')
   const minutesCountdown = document.querySelector('#minutes')
   const secondsCountdown = document.querySelector('#seconds')
+  const infotxt = document.querySelector('#infotxt')
 
   const currentTime = new Date()
   let yearOfTheEvent = currentTime.getFullYear()
@@ -28,6 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
       annivAurelien = new Date( yearOfTheEvent + 1, 04, 08 )
     } else if ( now.getFullYear() === annivAurelien.getFullYear() + 1 ) {
       annivAurelien = new Date( now.getFullYear(), 04, 08 )
+    }
+    
+    if (annivAurelien > annivAlex){
+     infotxt.innerHTML = "Anniversaire d'Aurelien"; 
+    } else {
+      infotxt.innerHTML = "Anniversaire d'Alexandre"; 
     }
     
     const currentTime = now.getTime()
