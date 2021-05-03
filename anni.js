@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     if (annivAurelien > annivAlex){
-     infotxt.innerHTML = "Anniversaire d'Aurelien"; 
+      infotxt.innerHTML = "Anniversaire d'Aurelien"; 
     } else {
       infotxt.innerHTML = "Anniversaire d'Alexandre"; 
     }
@@ -40,6 +40,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentTime = now.getTime()
     const annivAlex = annivAlex.getTime()
     const annivAurelien = annivAurelien.getTime()
+    
+     if (annivAurelien > annivAlex){
+      eventTime = annivAurelien - currentTime; 
+    } else {
+      eventTime = annivAlex - currentTime;
+    }
+    
     const remainingTime = eventTime - currentTime
 
     let seconds = Math.floor( remainingTime / 1000 )
