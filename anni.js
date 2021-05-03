@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     const remainingTime = eventTime - currentTime
-    console.log(remainingTime)
+    console.log(eventTime)
 
     let seconds = Math.floor( remainingTime / 1000 )
     let minutes = Math.floor( seconds / 60 )
