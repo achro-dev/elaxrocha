@@ -37,8 +37,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
      if (annivAurelien > annivAlex){
       eventTime = annivAurelien.getTime() 
+       txtCont.innerHTML = "Anniversaire d'Aurelien";
     } else {
       eventTime = annivAlex.getTime()
+      txtCont.innerHTML = "Anniversaire d'Alexandre";
     }
     
     const remainingTime = eventTime - currentTime
