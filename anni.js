@@ -10,8 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const currentTime = new Date()
   let yearOfTheEvent = currentTime.getFullYear()
+  
   let annivAlex = new Date( yearOfTheEvent, 05, 24 )
   const isItJune24th = currentTime.getMonth() === 05 && currentTime.getDate() === 24
+  
+  let annivAurelien = new Date( yearOfTheEvent, 05, 24 )
+  const isItApril04th = currentTime.getMonth() === 03 && currentTime.getDate() === 04
 
   function countdown() {
     const now = new Date()
@@ -19,12 +23,26 @@ document.addEventListener('DOMContentLoaded', function() {
     if (now > annivAlex) {
       annivAlex = new Date( yearOfTheEvent + 1, 05, 24 )
     } else if ( now.getFullYear() === annivAlex.getFullYear() + 1 ) {
-      annivAlexe = new Date( now.getFullYear(), 05, 24 )
+      annivAlex = new Date( now.getFullYear(), 05, 24 )
+    }
+    
+    if (now > annivAurelien) {
+      annivAurelien = new Date( yearOfTheEvent + 1, 05, 24 )
+    } else if ( now.getFullYear() === annivAurelien.getFullYear() + 1 ) {
+      annivAurelien = new Date( now.getFullYear(), 05, 24 )
     }
     
     const currentTime = now.getTime()
-    const eventTime = annivAlex.getTime()
+    var eventTime = 1;
+    
+     if (annivAurelien > annivAlex){
+      eventTime = annivAurelien - currentTime; 
+    } else {
+      eventTime = annivAlex - currentTime;
+    }
+    
     const remainingTime = eventTime - currentTime
+    console.log(remainingTime)
 
     let seconds = Math.floor( remainingTime / 1000 )
     let minutes = Math.floor( seconds / 60 )
@@ -41,16 +59,22 @@ document.addEventListener('DOMContentLoaded', function() {
       countdownContainer.style.display = "none"
       birthdayTime.style.display = "block"
 
-    } else {
+    } else if ( isItApril04th ) {
 
+      console.log('Happy birthday, Aurelien!')
+
+      countdownContainer.style.display = "none"
+      birthdayTime.style.display = "block"
+
+    } else {
+      
       daysCountdown.textContent = days
       hoursCountdown.textContent = hours
       minutesCountdown.textContent = minutes
       secondsCountdown.textContent = seconds
 
       setTimeout(countdown, 1000)
-
-    } 
+    }
 
   } // end of countdown
   countdown()
