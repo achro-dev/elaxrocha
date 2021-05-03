@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentTime = now.getTime()
     const annivAlex = annivAlex.getTime()
     const annivAurelien = annivAurelien.getTime()
+    const remainingTime
     
      if (annivAurelien > annivAlex){
       eventTime = annivAurelien - currentTime; 
@@ -47,8 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
       eventTime = annivAlex - currentTime;
     }
     
-    const remainingTime = eventTime - currentTime
-
+    
     let seconds = Math.floor( remainingTime / 1000 )
     let minutes = Math.floor( seconds / 60 )
     let hours =  Math.floor( minutes / 60 )
