@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let annivAlex = new Date( yearOfTheEvent, 05, 24 )
   const isItJune24th = currentTime.getMonth() === 05 && currentTime.getDate() === 24
   
-  let annivAurelien = new Date( yearOfTheEvent, 05, 24 )
+  let annivAurelien = new Date( yearOfTheEvent, 03, 04 )
   const isItApril04th = currentTime.getMonth() === 03 && currentTime.getDate() === 04
 
   function countdown() {
@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     if (now > annivAurelien) {
-      annivAurelien = new Date( yearOfTheEvent + 1, 05, 24 )
+      annivAurelien = new Date( yearOfTheEvent + 1, 03, 03 )
     } else if ( now.getFullYear() === annivAurelien.getFullYear() + 1 ) {
-      annivAurelien = new Date( now.getFullYear(), 05, 24 )
+      annivAurelien = new Date( now.getFullYear(), 03, 04 )
     }
     
     const currentTime = now.getTime()
