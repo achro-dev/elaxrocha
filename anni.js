@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function countdown() {
     const now = new Date()
+    const annivAlex = annivAlex.getTime()
+    const annivAurelien = annivAurelien.getTime()
     
     if (now > annivAlex) {
       annivAlex = new Date( yearOfTheEvent + 1, 04, 08 )
@@ -38,8 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     const currentTime = now.getTime()
-    const annivAlex = annivAlex.getTime()
-    const annivAurelien = annivAurelien.getTime()
     var eventTime = 1;
     
      if (annivAurelien > annivAlex){
