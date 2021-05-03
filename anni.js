@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     const currentTime = now.getTime()
-    var eventTime = 1;
+    var eventTime;
     
      if (annivAurelien > annivAlex){
       eventTime = annivAurelien - currentTime; 
