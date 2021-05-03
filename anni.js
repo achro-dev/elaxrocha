@@ -6,51 +6,26 @@ document.addEventListener('DOMContentLoaded', function() {
   const hoursCountdown = document.querySelector('#hours')
   const minutesCountdown = document.querySelector('#minutes')
   const secondsCountdown = document.querySelector('#seconds')
-  const infotxt = document.querySelector('#infotxt')
+  const txtCont = document.querySelector('#infotxt')
 
   const currentTime = new Date()
   let yearOfTheEvent = currentTime.getFullYear()
-  let annivAlex = new Date( yearOfTheEvent, 04, 08 )
-  const isItAugust4th = currentTime.getMonth() === 08 && currentTime.getDate() === 04
-  
-  let annivAurelien = new Date( yearOfTheEvent, 04, 05 )
-  const isItMay4th = currentTime.getMonth() === 05 && currentTime.getDate() === 04
+  let annivAlex = new Date( yearOfTheEvent, 05, 24 )
+  const isItJune24th = currentTime.getMonth() === 05 && currentTime.getDate() === 24
 
   function countdown() {
     const now = new Date()
-    const annivAlex = annivAlex.getTime()
-    const annivAurelien = annivAurelien.getTime()
     
     if (now > annivAlex) {
-      annivAlex = new Date( yearOfTheEvent + 1, 04, 08 )
+      annivAlex = new Date( yearOfTheEvent + 1, 05, 24 )
     } else if ( now.getFullYear() === annivAlex.getFullYear() + 1 ) {
-      annivAlex = new Date( now.getFullYear(), 04, 08 )
-    }
-    
-    if (now > annivAurelien) {
-      annivAurelien = new Date( yearOfTheEvent + 1, 04, 08 )
-    } else if ( now.getFullYear() === annivAurelien.getFullYear() + 1 ) {
-      annivAurelien = new Date( now.getFullYear(), 04, 08 )
-    }
-    
-    if (annivAurelien > annivAlex){
-      infotxt.innerHTML = "Anniversaire d'Aurelien"; 
-    } else {
-      infotxt.innerHTML = "Anniversaire d'Alexandre"; 
+      annivAlexe = new Date( now.getFullYear(), 05, 24 )
     }
     
     const currentTime = now.getTime()
-    var eventTime = 1;
-    
-     if (annivAurelien > annivAlex){
-      eventTime = annivAurelien - currentTime; 
-    } else {
-      eventTime = annivAlex - currentTime;
-    }
-    
+    const eventTime = annivAlex.getTime()
     const remainingTime = eventTime - currentTime
-    console.log(remainingTime)
-    
+
     let seconds = Math.floor( remainingTime / 1000 )
     let minutes = Math.floor( seconds / 60 )
     let hours =  Math.floor( minutes / 60 )
@@ -60,15 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
     minutes %= 60
     seconds %= 60
 
-    if ( isItAugust4th ) {
+    if ( isItJune24th ) {
       console.log('Happy birthday, Alex!')
-
-      countdownContainer.style.display = "none"
-      birthdayTime.style.display = "block"
-
-    } else if ( isItMay4th ) {
-
-      console.log('Happy birthday, Aurelien!')
 
       countdownContainer.style.display = "none"
       birthdayTime.style.display = "block"
@@ -81,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
       secondsCountdown.textContent = seconds
 
       setTimeout(countdown, 1000)
-    }
+
+    } 
 
   } // end of countdown
   countdown()
